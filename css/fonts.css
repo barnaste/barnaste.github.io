@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Rubik;
+    font-style: normal;
+    src: url(/fonts/Rubik-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Barlow;
+    font-style: normal;
+    src: url(/fonts/Barlow-Light.ttf) format("truetype");
+}
