@@ -62,6 +62,13 @@ a {
     border: 2px solid #4e5669;
     z-index: 1;
 }
+#home .fade {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, transparent 0%, transparent 70%, #444c5d 100%);
+    z-index: 2;
+}
 #home .circle {
     width: max(9vw, 60px);
     height: max(9vw, 60px);
@@ -98,7 +105,7 @@ a {
 
 /*ABOUT*/
 #about {
-    background-color: #2f343f;
+    background-color: #444c5d;
     padding: 8vh 0 2vh 0;
 }
 #about .row {
@@ -158,7 +165,7 @@ a {
     min-width: 256px;
     max-width: 750px;
     margin-top: 4vh;
-    margin-bottom: auto;
+    margin-bottom: 10vh;
     flex-grow: 1;
 }
 #about h1 {
@@ -192,17 +199,18 @@ a {
 /* reduce the row margins on mobile devices*/
 @media (max-width: 900px) {
     #about {
-        padding: 8vh 0;
+        padding: 8vh 0 12vh 0;
     }
     #about .row {
         flex-direction: column;
         gap: 0;
     }
+    #about .row .text {
+        margin-bottom: auto;
+    }
     #about .roundimg {
         max-width: 50vw;
     }
-
-
 }
 
 /*PROJECTS*/
