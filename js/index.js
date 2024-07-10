@@ -2,15 +2,11 @@
 const home = document.getElementById("home");
 const circ = document.querySelector(".circle");
 const rad = circ.clientWidth / 2;
-let clX = 0,
-    clY = 0;
 
 // change the position of the circle when moving around home
 home.addEventListener("mousemove", function(e) {
     circ.style.top = e.clientY - rad + "px";
     circ.style.left = e.clientX - rad + "px";
-    clX = e.clientX;
-    clY = e.clientY;
 });
 
 /* PARALLAX SCROLLING */

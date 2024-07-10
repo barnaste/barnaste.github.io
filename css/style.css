@@ -21,7 +21,7 @@ a {
     text-decoration: none;
 }
 
-/*HOME*/
+/*#region HOME*/
 #home {
     height: 100vh;
     width: 100%;
@@ -102,11 +102,12 @@ a {
     border-left: max(min(0.15vw, 2px), 1px) solid #86a0bf;
     border-bottom: max(min(0.15vw, 2px), 1px) solid #86a0bf;
 }
+/*#endregion HOME*/
 
 /*ABOUT*/
 #about {
     background-color: #444c5d;
-    padding: 8vh 0 2vh 0;
+    padding: 8vh 0 6vh 0;
 }
 #about .row {
     position: relative;
@@ -117,9 +118,6 @@ a {
     justify-content: center;
     align-items: center;
     gap: 8%;
-}
-#about .row div {
-    margin: 2vh 0;
 }
 #about .graphics {
     flex-basis: 10%;
@@ -136,12 +134,10 @@ a {
 }
 #about .graphics img {
     clip-path: circle();
-    width: 100%;hr {
-        width: max(25%, 400px);
-    }
+    width: 100%;
     height: 100%;
 }
-.icons {
+#about .icons {
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -150,15 +146,13 @@ a {
     position: relative;
 }
 .icons div {
-    flex-basis: 30%;
+    flex-basis: 25%;
+    margin: 3vh 0;
+    text-align: center;
 }
 .icons div a {
     border-radius: 50%;    
-    padding: 0 20px;
-    margin: 0;
     font-size: 40px;
-    width: 50px;
-    text-align: center;
 }
 #about .row .text {
     flex-basis: 30%;
@@ -213,7 +207,7 @@ a {
     }
 }
 
-/*PROJECTS*/
+/*#region PROJECTS*/
 #projects {
     background-color: #d9dee8;
     height: 80vh;
@@ -239,6 +233,7 @@ a {
 #projects h2 {
     margin: auto;
     width: fit-content;
-    padding: 5vh 0;
+    padding: 8vh 0;
     letter-spacing: 1vw;
 }
+/*#endregion PROJECTS*/
