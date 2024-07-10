@@ -1,20 +1,24 @@
 /* MOUSE HOVER EFFECT */
-let home = document.getElementById("home");
-let circ = document.querySelector(".circle");
-let rad = circ.clientWidth / 2;
+const home = document.getElementById("home");
+const circ = document.querySelector(".circle");
+const rad = circ.clientWidth / 2;
+let clX = 0,
+    clY = 0;
 
 // change the position of the circle when moving around home
 home.addEventListener("mousemove", function(e) {
-    circ.style.top = e.pageY - rad + "px";
-    circ.style.left = e.pageX - rad + "px";
+    circ.style.top = e.clientY - rad + "px";
+    circ.style.left = e.clientX - rad + "px";
+    clX = e.clientX;
+    clY = e.clientY;
 });
 
 /* PARALLAX SCROLLING */
-let bg = document.getElementById("bg");
-let fg = document.getElementById("fg");
-let text = document.getElementById('home-text'),
-    style = window.getComputedStyle(text),
-    txtop = style.getPropertyValue('top');
+const bg = document.getElementById("bg");
+const fg = document.getElementById("fg");
+const text = document.getElementById('home-text'),
+    style = window.getComputedStyle(text);
+const txtop = style.getPropertyValue('top');
 
 window.addEventListener('scroll', function(e) {
     var value = window.scrollY;
