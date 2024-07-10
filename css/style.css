@@ -21,6 +21,41 @@ a {
     text-decoration: none;
 }
 
+/*#region ANIMATIONS*/
+@keyframes fadecol {
+    0% {
+        color: #d9dee8;
+    }
+    100% {
+        color: #86a0bf;
+    }
+}
+@keyframes unfadecol {
+    0% {
+        color: #86a0bf;
+    }
+    100% {
+        color: #d9dee8;
+    }
+}
+@keyframes down {
+    0% {
+        transform: translateY(0vh) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(1.5vh) rotate(-45deg);
+    }
+}
+@keyframes up {
+    0% {
+        transform: translateY(1.5vh) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(0vh) rotate(-45deg);
+    }
+}
+/*#endregion*/
+
 /*#region HOME*/
 #home {
     height: 100vh;
@@ -79,9 +114,8 @@ a {
     z-index: 1;
 }
 #home a {
-    padding-top: 60px;
     position: absolute;
-    bottom: 60px;
+    bottom: 100px;
     left: 50%;
     color: #eceff4;
     transform: translate(0, -80%);
@@ -93,14 +127,14 @@ a {
     position: relative;
     width: max(min(2vw, 30px), 20px);
     height: max(min(2vw, 30px), 20px);
-    border-left: max(min(0.15vw, 2px), 1px) solid #eceff4;
-    border-bottom: max(min(0.15vw, 2px), 1px) solid #eceff4;
+    border-left: max(min(0.15vw, 2px), 1px) solid;
+    border-bottom: max(min(0.15vw, 2px), 1px) solid;
     transform: rotate(-45deg);
-    transition: border-left .4s, border-bottom .4s;
+    
+    animation: 0.3s ease-in 0s 1 normal both unfadecol, 0.15s ease-in 0s 1 normal both up;
 }
-#home a span:hover {
-    border-left: max(min(0.15vw, 2px), 1px) solid #86a0bf;
-    border-bottom: max(min(0.15vw, 2px), 1px) solid #86a0bf;
+#home a:hover span {
+    animation: 0.3s ease-in 0s 1 normal both fadecol, 0.15s ease-in 0s 1 normal both down;
 }
 /*#endregion HOME*/
 
@@ -151,8 +185,12 @@ a {
     text-align: center;
 }
 .icons div a {
-    border-radius: 50%;    
+    border-radius: 50%;
     font-size: 40px;
+    animation: 0.3s ease-in 0s 1 normal both unfadecol;
+}
+.icons div a:hover {
+    animation: 0.3s ease-in 0s 1 normal both fadecol;
 }
 #about .row .text {
     flex-basis: 30%;
@@ -188,6 +226,39 @@ a {
     font-size: 18px;
     font-weight: lighter;
     letter-spacing: 1px;
+}
+/* bob on hover effect */
+@keyframes bob {
+    0% {
+        transform: translateY(-8px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
+}
+@keyframes bob-float {
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
+.bob {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+.bob:hover {
+    animation-name: bob;
+    animation-duration: .3s;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
 }
 
 /* reduce the row margins on mobile devices*/
