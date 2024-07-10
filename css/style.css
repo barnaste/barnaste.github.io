@@ -1,4 +1,5 @@
 @import url(fonts.css);
+@import url(anim.css);
 
 html, body {
     margin: 0;
@@ -20,41 +21,6 @@ a {
     color: #d9dee8;
     text-decoration: none;
 }
-
-/*#region ANIMATIONS*/
-@keyframes fadecol {
-    0% {
-        color: #d9dee8;
-    }
-    100% {
-        color: #86a0bf;
-    }
-}
-@keyframes unfadecol {
-    0% {
-        color: #86a0bf;
-    }
-    100% {
-        color: #d9dee8;
-    }
-}
-@keyframes down {
-    0% {
-        transform: translateY(0vh) rotate(-45deg);
-    }
-    100% {
-        transform: translateY(1.5vh) rotate(-45deg);
-    }
-}
-@keyframes up {
-    0% {
-        transform: translateY(1.5vh) rotate(-45deg);
-    }
-    100% {
-        transform: translateY(0vh) rotate(-45deg);
-    }
-}
-/*#endregion*/
 
 /*#region HOME*/
 #home {
@@ -187,10 +153,10 @@ a {
 .icons div a {
     border-radius: 50%;
     font-size: 40px;
-    animation: 0.3s ease-in 0s 1 normal both unfadecol;
+    animation: 0.3s ease-in 0s 1 normal both unfadecol, 0.3s ease-out 0s 1 normal forwards settle;
 }
 .icons div a:hover {
-    animation: 0.3s ease-in 0s 1 normal both fadecol;
+    animation: 0.3s ease-in 0s 1 normal both fadecol, 0.3s ease-out 0s 1 normal forwards float;
 }
 #about .row .text {
     flex-basis: 30%;
@@ -227,38 +193,22 @@ a {
     font-weight: lighter;
     letter-spacing: 1px;
 }
-/* bob on hover effect */
-@keyframes bob {
-    0% {
-        transform: translateY(-8px);
-    }
-    50% {
-        transform: translateY(-4px);
-    }
-    100% {
-        transform: translateY(-8px);
-    }
+#resume:before {
+    content: '';
+    position: absolute;
+    border: #d9dee8 solid 2px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition-duration: 0.3s;
+    transition-property: top, right, bottom, left;
 }
-@keyframes bob-float {
-    100% {
-      -webkit-transform: translateY(-8px);
-      transform: translateY(-8px);
-    }
-  }
-.bob {
-    display: inline-block;
-    vertical-align: middle;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  }
-.bob:hover {
-    animation-name: bob;
-    animation-duration: .3s;
-    animation-delay: 0s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-direction: normal;
+#resume:hover:before {
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
 }
 
 /* reduce the row margins on mobile devices*/
@@ -277,6 +227,7 @@ a {
         max-width: 50vw;
     }
 }
+/*#endregion ABOUT*/
 
 /*#region PROJECTS*/
 #projects {

@@ -1,0 +1,50 @@
+/* colour fade in effect */
+@keyframes fadecol {
+    0% {
+        color: #d9dee8;
+    }
+    100% {
+        color: #86a0bf;
+    }
+}
+@keyframes unfadecol {
+    0% {
+        color: #86a0bf;
+    }
+    100% {
+        color: #d9dee8;
+    }
+}
+
+/* up and down transforms -- tailored specifically for home anchor */
+@keyframes down {
+    0% {
+        transform: translateY(0vh) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(1.5vh) rotate(-45deg);
+    }
+}
+@keyframes up {
+    0% {
+        transform: translateY(1.5vh) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(0vh) rotate(-45deg);
+    }
+}
+
+/* float effect */
+@keyframes float {
+    100% {
+        transform: translateY(-1vh);
+    }
+}
+@keyframes settle {
+    0% {
+        transform: translateY(-1vh);
+    }
+    100% {
+        transform: translateY(0vh);
+    }
+}
