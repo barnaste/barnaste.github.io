@@ -241,7 +241,7 @@ a {
 /* reduce the row margins on mobile devices*/
 @media (max-width: 900px) {
     #about {
-        padding: 8vh 0 12vh 0;
+        padding: 10vh 0 14vh 0;
     }
     #about .row {
         flex-direction: column;
