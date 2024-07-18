@@ -1,3 +1,10 @@
+/* spinning loader animation */
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* colour fade in effect */
 @keyframes fadecol {
     0% {
