@@ -7,11 +7,6 @@ window.addEventListener("load", () => {
     });
 })
 
-/* TOGGLE ANIMATED MENU HAMBURGER */
-document.getElementById("mtoggle").addEventListener('click', (e) => {
-    e.currentTarget.classList.toggle('is-active');
-})
-
 /* MOUSE HOVER EFFECT */
 const home = document.getElementById("home");
 const circ = document.querySelector(".circle");
@@ -23,12 +18,17 @@ home.addEventListener("mousemove", (e) => {
     circ.style.left = e.clientX - rad + "px";
 });
 
+/* TOGGLE ANIMATED MENU HAMBURGER */
+const toggle = document.getElementById("mtoggle");
+toggle.addEventListener('click', (e) => {
+    e.currentTarget.classList.toggle('is-active');
+})
+
 /* PARALLAX SCROLLING */
 const bg = document.getElementById("bg");
 const fg = document.getElementById("fg");
-const text = document.getElementById('home-text'),
-    style = window.getComputedStyle(text);
-const txtop = style.getPropertyValue('top');
+const text = document.getElementById('home-text');
+const txtop = window.getComputedStyle(text).getPropertyValue('top');
 
 window.addEventListener('scroll', () => {
     var value = window.scrollY;

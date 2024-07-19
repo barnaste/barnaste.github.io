@@ -63,9 +63,19 @@ a {
     padding: 20px;
     cursor: pointer;
     overflow: hidden;
+    z-index: 2;
+}
+#mcontainer {
+    position: fixed;
+    display: inline-block;
+    top: 15px;
+    right: 20px;
+    padding: 20px;
+    cursor: pointer;
+    overflow: hidden;
     z-index: 1;
 }
-#mtoggle .minner {
+#mcontainer .minner {
     position: absolute;
     top: 50%;
     right: 0;
@@ -88,21 +98,21 @@ a {
     transform: translate(6px, -1px);
     opacity: 1;
 }
-#mtoggle .minner::before {
+#mcontainer .minner::before {
     top: -10px;
 }
-#mtoggle .minner::after {
+#mcontainer .minner::after {
     top: 13px;
 }
-#mtoggle:hover .minner {
+#mtoggle:hover + #mcontainer .minner {
     transform: translate(50px, -50%);
     opacity: 0;
 }
-#mtoggle:hover .minner::before, #mtoggle:hover .minner::after {
+#mtoggle:hover + #mcontainer .minner::before, #mtoggle:hover + #mcontainer .minner::after {
     transform: translate(-100px, -1px);
     opacity: 0;
 }
-#mtoggle .mhover {
+#mcontainer .mhover {
     position: absolute;
     top: 50%;
     right: 0;
@@ -114,7 +124,7 @@ a {
     transform: translate(-58px, -50%);
     opacity: 0;
 }
-#mtoggle .mhover::before, #mtoggle .mhover::after {
+#mcontainer .mhover::before, #mcontainer .mhover::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -125,34 +135,34 @@ a {
     transform: translate(100px, -1px);
     opacity: 0;
 }
-#mtoggle .mhover::before {
+#mcontainer .mhover::before {
     top: -10px;
 }
-#mtoggle .mhover::after {
+#mcontainer .mhover::after {
     top: 13px;
 }
-#mtoggle:hover .mhover {
+#mtoggle:hover + #mcontainer .mhover {
     transform: translate(-5px, -50%);
     opacity: 1;
 }
-#mtoggle:hover .mhover::before, #mtoggle:hover .mhover::after {
+#mtoggle:hover + #mcontainer .mhover::before, #mtoggle:hover + #mcontainer .mhover::after {
     transform: translate(0px, -1px);
     opacity: 1;
 }
-#mtoggle.is-active .minner {
+#mtoggle.is-active + #mcontainer .minner {
     display: none;
 }
-#mtoggle.is-active .mhover {
+#mtoggle.is-active + #mcontainer .mhover {
     transform: translate(-5px, -1px) rotate(45deg);
     transform-origin: center;
     opacity: 1;
 }
-#mtoggle.is-active .mhover::before {
+#mtoggle.is-active + #mcontainer .mhover::before {
     transform: translate(0, 11px) rotate(0deg);
     transform-origin: center;
     opacity: 1;
 }
-#mtoggle.is-active .mhover::after {
+#mtoggle.is-active + #mcontainer .mhover::after {
     transform: translate(0, -12px) rotate(90deg);
     transform-origin: center;
     opacity: 1;
@@ -162,7 +172,7 @@ a {
 
 /*#region HOME*/
 #home {
-    height: 100vh !important;
+    height: 100vh;
     width: 100%;
     position: relative;
     clip-path: inset(0 0 0 0); 
@@ -285,7 +295,7 @@ a {
 }
 .icons div {
     flex-basis: 25%;
-    margin: 3vh 0;
+    margin: 4vh 1vw 2vh 1vw;
     text-align: center;
 }
 .icons div a {
@@ -318,7 +328,7 @@ a {
     border: 2px solid #d9dee8;
 }
 #about p {
-    margin: 30px 0;
+    margin: 30px 0 40px 0;
     color: #d9dee8;
 }
 #resume {
