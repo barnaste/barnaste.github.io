@@ -7,6 +7,11 @@ window.addEventListener("load", () => {
     });
 })
 
+/* TOGGLE ANIMATED MENU HAMBURGER */
+document.getElementById("mtoggle").addEventListener('click', (e) => {
+    e.currentTarget.classList.toggle('is-active');
+})
+
 /* MOUSE HOVER EFFECT */
 const home = document.getElementById("home");
 const circ = document.querySelector(".circle");
